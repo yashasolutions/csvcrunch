@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    container_name: csvcrunch
+    environment:
+      POSTGRES_USER: gorm
+      POSTGRES_PASSWORD: gorm 
+    volumes:
+      - ./csv:/tmp/data 
+    ports:
+      - "5433:5432"
